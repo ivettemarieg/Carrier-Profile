@@ -7,6 +7,11 @@ body {
     padding: 2px;   
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
+/* START NAVIGATION BAR */
 #home{
     margin-left: 8px;
     font-weight: bolder;
@@ -63,7 +68,37 @@ a:hover{
     padding: 4px;
     margin-left: 5px;
 }
+/* END NAVIGATION BAR */
 
+/* START SECTIONS */
+#about,
+#drivers,
+#trailers,
+#contact {
+  height: 80vh;
+}
+#drivers, 
+#contact{
+  background: hsl(210, 31%, 80%);
+}
+
+.title h2 {
+    text-align: center;
+}
+
+.section {
+    padding-bottom: 5rem;
+}
+
+.section-center {
+    width: 90vw;
+    margin: 0 auto;
+    max-width: 1170px;
+}
+/* END SECTIONS */
+
+
+/* DARK MODE */
 .dark,
 .dark *{
     background-color: #222;
