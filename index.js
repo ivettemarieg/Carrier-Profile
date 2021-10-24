@@ -2,18 +2,14 @@
 const menuBtn = document.querySelector('.menu-btn')
 const navLinks = document.querySelector('.nav-links')
 const body = document.querySelector('body')
+const navbar = document.getElementById("nav")
 
 menuBtn.addEventListener("click", function(){
-    if(navLinks.classList.contains('show-links')){
-        navLinks.classList.remove('show-links')
-        body.style.overflow = "auto"
-    }
-    else{
+    if(!navLinks.classList.contains('show-links')){
         navLinks.classList.add('show-links')
-        body.style.overflow = "hidden"
+        body.style.overflow = "hidden"    
     }
 })
-
 
 navLinks.addEventListener('click', function(){
     if(navLinks.classList.contains('show-links')){
@@ -22,33 +18,35 @@ navLinks.addEventListener('click', function(){
     }
 })
 
-// Scrolling Links (Needs fixing)
 
-// navLinks.forEach(function(link){
-//     link.addEventListener("click", function(){
-//         e.preventDefault()
-        
-//         //To direct user to specified section
-//         const sectionId = e.currentTarget.getAttribute('href').slice(1)
-//         const element = document.getElementById(sectionId)
-//         let sectionStart = element.offsetTop
-//         window.scrollTo({
-//             left:0,
-//             top: sectionStart
-//         })
-//     })
-// })
+// Scrolling links to specified location 
 
+const scrollBtn = document.querySelectorAll('.scroll-btn')
+
+scrollBtn.forEach(function(link){
+    link.addEventListener('click', function(e){
+        e.preventDefault()
+        const id = e.target.getAttribute("href").slice(1)
+        const el = document.getElementById(id)
+
+        let topOfSection = el.offsetTop - 95.93
+        console.log(el.offsetTop)
+
+        window.scrollTo({
+            left: 0,
+            top: topOfSection,
+            behavior: "smooth"
+        })
+    })
+})
 
 
 // Dark Mode
-// $(".inner-switch").on("click",function(){
+// $(".switch").on("click",function(){
 //     if($("body").hasClass("dark")){
 //         $("body").removeClass("dark")
-//         $(".inner-switch").text("OFF")
 //     }
 //     else{
 //         $("body").addClass("dark")
-//         $(".inner-switch").text("ON")
 //     }
 // })
