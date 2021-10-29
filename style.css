@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     font-family: 'Oswald', sans-serif;;
 }
@@ -21,7 +25,8 @@ nav{
     width: 100%;
     top: 0;
     left: 0;
-    position: fixed;
+    position: sticky;
+    z-index: 1;
 }
 
 .logo{
@@ -30,6 +35,7 @@ nav{
     display: block;
     border-radius: 888em;
     box-shadow: 10px 10px 10px rgba(15, 15, 15, 0.459);
+    cursor: pointer;
 }
 
 .nav-links{
@@ -79,7 +85,6 @@ nav{
 }
 
 .greeting{
-    margin-top: 3%;
     text-align: center;
     letter-spacing: 25px;    
     font-size: 10vh;
@@ -155,13 +160,14 @@ p{
 #contact {
     padding-top: 10vh;
     height: 120vh;
-    font-size: 3vh;
+    font-size: 4vh;
     text-align: center;
 }
 
-#drivers,
-#contact{
-  background: hsl(210, 31%, 80%);
+.section{
+    margin-bottom: 2%;
+    border: .5vh solid white;
+    border-radius: 25px;
 }
 
 .title{
@@ -172,12 +178,34 @@ p{
 
 /* ABOUT US */
 
+#about {
+    position: relative;
+    overflow: hidden;
+    background: rgba(94, 94, 94, 0.103);
+}
+
+#about::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: -10%;
+    left: -1;
+    height: 150%;
+    background: rgba(128, 128, 128, 0.137);
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+    transform: rotateY(-11deg)
+}
+
+.content{
+    position: relative;
+}
+
 .emp-img{
     width: 20vh;
     height: 20vh;
     border-radius: 25%;
     margin: 0 auto;
-    margin-top: 5%;
+    margin-top: 2%;
 }
 
 .emp-img img{
@@ -185,6 +213,7 @@ p{
     display: block;
     height: 100%;
     object-fit: cover;
+    padding: 1vh;
     border-radius: 50%;
     box-shadow: 20px 20px 10px #30cfd0;
 }
@@ -195,57 +224,68 @@ p{
 }
 
 #emp-name{
-    margin-top: 5%;
+    margin-top: 3%;
     font-size: 6vh;
 }
 
-.last-name{
-    color:#30cfd0;
-}
-
 #job{
+    margin-top: 0%;
     font-size: 4vh;
-    color: black; 
+    color: #30cfd0; 
     font-weight: bold;
 }
 
-.btn-container{
-    margin-top: 10%;
+#description{
+    color:black;
+    font-size: 4vh;
+    font-weight: bold; 
 }
 
-.next-btn{
+.btn-container{
+    margin-top: 3%;
+}
+
+.next-btn,
+.prev-btn{
     background: transparent;
     border: none;
     font-size: 5vh;
-    margin-right: 5%;
-    margin-left: 3%;
     cursor: pointer;
+    margin-left: 2%;
+    margin-right: 2%; 
 }
 
-.next-btn:hover{
+.next-btn:hover,
+.prev-btn:hover{
     transform: scale(1.2);
     transition: transform 330ms ease-in-out;
     color: #30cfd0;
 }
 
-
-
-
-
-
-
 /* END ABOUT US */
 
+/* BEGIN DRIVER  */
 
-@media (max-width: 1224px) {
-    .nav-links a{
-        font-size: 2.2vh;
-        padding: 25px 25px;
-    }
-
+#drivers{
+    position: relative;
+    overflow: hidden;
+    background: rgba(94, 94, 94, 0.103);
 }
 
-@media (max-width: 800px) {
+#drivers:before{
+    content: "";
+    position: absolute;
+    width: 50%;
+    top: -10%;
+    left: 0;
+    height: 150%;
+    background: rgba(128, 128, 128, 0.137);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+/* END DRIVER */
+
+@media (max-width: 1200px) {
 
     .menu-btn{
         display: block;
@@ -274,7 +314,7 @@ p{
 
     #welcome{
         padding-top: 20vh;
-        height: 130vh;
+        height: 110vh;
     }
 
     .greeting{
@@ -296,6 +336,36 @@ p{
         letter-spacing: 3px;    
         font-size: 4vh;
     }
+
+    #about{
+        height: 90vh;
+        font-size: 3vh;
+    }
+
+    #about::before {
+        width: 100%;
+        top: -10%;
+        height: 130%;
+    }
+
+    .emp-img{
+        width: 15vh;
+        height: 15vh;
+    }
+
+    #emp-name{
+        font-size: 4vh;
+    }
+    
+    #job{
+        margin-top: 0%;
+        font-size: 2vh;
+    }
+    
+    #description{
+        font-size: 2vh;
+    }
+    
 }
 
 @media (max-width: 450px){
