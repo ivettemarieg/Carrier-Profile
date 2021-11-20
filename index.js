@@ -131,9 +131,85 @@ prevBtn.addEventListener('click', function(){
     displayEmp(currentItem)
     toAbout()
 })
+//End About Section
 
+//Tab functionality in Driver Section
+function openTab(evt, drivertab) {
+    
+    var i, drivercontent, driverlinks
+    drivercontent = document.getElementsByClassName("drivers-content")
+    for (i = 0; i < drivercontent.length; i++) {
+      drivercontent[i].style.display = "none"
+    }
+    driverlinks = document.getElementsByClassName("drivers-tab-btn")
+    for (i = 0; i < driverlinks.length; i++) {
+      driverlinks[i].className = driverlinks[i].className.replace(" active", "")
+    }
+    document.getElementById(drivertab).style.display = "block"
+    evt.currentTarget.className += " active"
+}
+//End Tab
 
+//Driver Section Gallery
+mediumZoom('.zoom', { 
+    background: '#BEBEBE',
+    margin: 100,
+    scrollOffset: 150
+})
 
+const slideshow = [
+    {
+        trailerImg : 'img/T1.jpeg'
+    },
+
+    {
+        trailerImg : 'img/T2.jpeg'
+    },
+
+    {
+        trailerImg : 'img/T3.jpeg'
+    },
+
+    {
+        trailerImg : 'img/T4.jpeg'
+    },
+
+    {
+        trailerImg : 'img/T5.jpeg'
+    },
+
+    {
+        trailerImg : 'img/T6.jpeg'
+    },
+]
+
+const trailerImg = document.getElementById("trailer-img")
+const trNextBtn = document.querySelector(".next-btn-trailer")
+const trPrevBtn = document.querySelector(".prev-btn-trailer") 
+
+let trImgCount = 0
+trNextBtn.addEventListener('click', function(){
+    trImgCount++
+    if(trImgCount > slideshow.length-1){
+        trImgCount = 0
+    }
+    DisplayTR(trImgCount)
+})
+
+trPrevBtn.addEventListener('click', function(){
+    trImgCount--
+    if(trImgCount < 0){
+        trImgCount = slideshow.length-1
+    }
+    DisplayTR(trImgCount)
+})
+
+function DisplayTR(trailer){
+    const item = slideshow[trailer]
+    trailerImg.src = item.trailerImg
+}
+
+//End Driver Section Gallery
 
 // Dark Mode
 // $(".switch").on("click",function(){
@@ -143,4 +219,4 @@ prevBtn.addEventListener('click', function(){
 //     else{
 //         $("body").addClass("dark")
 //     }
-// })
+// }
