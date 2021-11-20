@@ -154,20 +154,15 @@ p{
 
 /* End Home Section */
 
-#about,
-#drivers,
-#trailers,
-#contact {
-    padding-top: 10vh;
-    height: 120vh;
-    font-size: 4vh;
-    text-align: center;
-}
-
+/* GENERAL SECTIONS */
 .section{
     margin-bottom: 2%;
     border: .5vh solid white;
     border-radius: 25px;
+    padding-top: 10vh;
+    height: 120vh;
+    font-size: 4vh;
+    text-align: center;
 }
 
 .title{
@@ -226,6 +221,7 @@ p{
 #emp-name{
     margin-top: 3%;
     font-size: 6vh;
+    color: black;
 }
 
 #job{
@@ -246,7 +242,9 @@ p{
 }
 
 .next-btn,
-.prev-btn{
+.prev-btn,
+.prev-btn-trailer,
+.next-btn-trailer{
     background: transparent;
     border: none;
     font-size: 5vh;
@@ -256,7 +254,9 @@ p{
 }
 
 .next-btn:hover,
-.prev-btn:hover{
+.prev-btn:hover,
+.next-btn-trailer:hover,
+.prev-btn-trailer:hover{
     transform: scale(1.2);
     transition: transform 330ms ease-in-out;
     color: #30cfd0;
@@ -282,6 +282,117 @@ p{
     background: rgba(128, 128, 128, 0.137);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
+
+#driver-name{
+    margin-top: 1%;
+}
+
+.driver{
+    width: 90vw;
+    margin: 3% auto;
+    display: grid;
+    max-width: 70%;
+    grid-template-columns: 1fr 1fr; 
+}
+
+.drivers-prof{
+    width: 80vh;
+    height: 80vh;
+}
+
+#driver-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 10px 10px 10px rgba(15, 15, 15, 0.459);
+}
+
+.drivers-btn-content{
+    /* background: white; */
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: auto;
+    box-shadow: 10px 10px 10px rgba(15, 15, 15, 0.459);
+    background: #e6e6e6;
+}
+
+.drivers-tab{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem; 
+    overflow: hidden; 
+}
+
+.drivers-tab-btn:nth-child(1) {
+    border-top-left-radius: 0.5rem;
+}
+
+.drivers-tab-btn:nth-child(3) {
+    border-top-right-radius: 0.5rem;
+}
+
+.drivers-tab-btn{
+    font-size: 8vh;
+    cursor: pointer;
+    display: block;
+    border: none;
+    background:rgba(77, 77, 77, 0.507);
+    transition: 00.3s;
+}
+
+.drivers-tab-btn:hover{
+    background: #e6e6e6;
+    color: #30cfd0;
+}
+
+.drivers-tab-btn.active{
+    background: #e6e6e6;
+}
+
+.drivers-content-info{
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;  
+    padding: 2rem 1.5rem
+}
+
+.drivers-content{
+    display: none;
+    max-height: 80vh;
+}
+
+.drivers-content.active{
+    display: block;
+}
+
+h4{
+    color: #30cfd0;
+}
+
+#tab-title{
+    float:left;
+    margin-bottom: 3%;
+    margin-right: 100%;
+}
+
+.slideshow{
+    width: 50vh;
+    height: 50vh;
+    margin: 0 auto;
+}
+
+.slide{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 30px 30px 10px rgba(15, 15, 15, 0.459);
+}
+
+.btn-container-trailer{
+    margin-top: 18%;
+}
+
 
 /* END DRIVER */
 
