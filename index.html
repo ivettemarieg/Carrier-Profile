@@ -26,8 +26,6 @@
                         <span class="inner-switch">OFF</span></a> -->
                     <!-- </li> -->
                 </ul>
-                
-
             </aside>
 
             <button class="menu-btn">
@@ -72,21 +70,60 @@
         </section>
     <!-- DRIVERS -->
             <section id="drivers" class="section">
-                <div class="content">
-                    <div class="title">
-                        <h2>DRIVERS</h2>
-                    </div>
-                    <article class="drivers">
-                        <div class="btn-container">
-                            <button class="prev-btn">
-                                <i class="fas fa-chevron-circle-left"></i>
-                            </button>
-                            <button class="next-btn">
-                                <i class="fas fa-chevron-circle-right"></i>
-                            </button>
-                        </div>
-                    </article>
+                <div class="title">
+                    <h2>DRIVERS</h2>
+                    <h4 id="driver-name">Victor Gonzalez Velazquez</h4>
                 </div>
+
+                <div class="driver">
+                    <article class="drivers-prof">
+                        <img id="driver-img" src="img\Victor.jpg">
+                    </article>
+
+                    <article class="drivers-btn-content">
+                        <div class="drivers-tab">
+                                <button class="drivers-tab-btn active" onclick="openTab(event,'truck')"><i class="fas fa-truck-moving"></i></button>
+                                <button class="drivers-tab-btn" onclick="openTab(event,'trailer')"><i class="fas fa-trailer"></i></button>
+                                <button class="drivers-tab-btn" onclick="openTab(event,'routes')"><i class="fas fa-route"></i></button>
+                        </div>
+
+                        <div class="drivers-content-info">
+                            <div class="drivers-content active" id="truck">
+                                <h4 id="tab-title">TRUCK</h4>
+                                <div class="truck-img-container">
+                                    <img id="truck-img" src="">
+                                    <img id="truck-img" src="">
+                                    <img id="truck-img" src="">
+                                    <img id="truck-img" src="">
+                                </div>
+                            </div>
+
+                            <div class="drivers-content" id="trailer">
+                                <h4 id="tab-title">TRAILER</h4>
+                                <div class="trailer-img-container">
+                                    <div class="slideshow">
+                                        <img class="slide zoom" id="trailer-img" src="img\T1.jpeg">
+                                    </div>
+                                </div>
+
+                                <div class="btn-container-trailer">
+                                    <button class="prev-btn-trailer">
+                                        <i class="fas fa-chevron-circle-left"></i>
+                                    </button>
+                                    <button class="next-btn-trailer">
+                                        <i class="fas fa-chevron-circle-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="drivers-content" id="routes">
+                                <h4 id="tab-title">ROUTES</h4>
+                                <!-- <img id="route-img" src=""> -->
+                            </div>
+        
+                        </div>
+                    </article> 
+                </div>    
             </section>
     <!-- TRAILERS -->
             <section id="trailers" class="section">
@@ -100,7 +137,8 @@
                      <h2>CONTACT US</h2>
                 </div>
             </section>
-
+        
+        <script src="medium-zoom.min.js"></script>
         <script src="index.js"></script>
     </body>
 </html>
