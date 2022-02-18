@@ -19,7 +19,7 @@
                     <li><a href="#drivers" class="scroll-btn">DRIVERS</a></li>
                     <li><a href="#trailers" class="scroll-btn">TRAILERS</a></li>
                     <li><a href="#contact" class="scroll-btn">CONTACT US</a></li>
-                    <li><a href="">DARK MODE</a></li>
+                    <!-- <li><a href="">DARK MODE</a></li> -->
                     
                     
                     <!-- <li class="switch"><a>Dark Mode:</a>
@@ -42,7 +42,7 @@
                     trucking needs. We look forward to working with you! 
                 </p>
             </div>
-<!-- This should direct to spanish section -->
+<!-- This should direct to spanish website -->
                 <div class="esp"><button>Hablamos Español</button></div>
         </section>
     <!-- ABOUT -->
@@ -58,10 +58,10 @@
                     <p id="description"></p>
                     
                     <div class="btn-container">
-                        <button class="prev-btn">
+                        <button class="prev-btn" id="prvbtn">
                             <i class="fas fa-chevron-circle-left"></i>
                         </button>
-                        <button class="next-btn">
+                        <button class="next-btn" id="nxtbtn">
                             <i class="fas fa-chevron-circle-right"></i>
                         </button>
                     </div>
@@ -80,6 +80,7 @@
                         <img id="driver-img" src="img\Victor.jpg">
                     </article>
 
+                    <artice class="space"></artice>
                     <article class="drivers-btn-content">
                         <div class="drivers-tab">
                                 <button class="drivers-tab-btn active" onclick="openTab(event,'truck')"><i class="fas fa-truck-moving"></i></button>
@@ -91,11 +92,20 @@
                             <div class="drivers-content active" id="truck">
                                 <h4 id="tab-title">TRUCK</h4>
                                 <div class="truck-img-container">
-                                    <img id="truck-img" src="">
-                                    <img id="truck-img" src="">
-                                    <img id="truck-img" src="">
-                                    <img id="truck-img" src="">
+                                    <div class="slideshow">
+                                        <img class="slide zoom" id="truck-img" src="img\truck1.jpg">
+                                    </div>
                                 </div>
+
+                                <div class="btn-container-driver">
+                                    <button class="prev-btn-truck" id="prvbtn">
+                                        <i class="fas fa-chevron-circle-left"></i>
+                                    </button>
+                                    <button class="next-btn-truck" id="nxtbtn">
+                                        <i class="fas fa-chevron-circle-right"></i>
+                                    </button>
+                                </div>
+
                             </div>
 
                             <div class="drivers-content" id="trailer">
@@ -106,11 +116,11 @@
                                     </div>
                                 </div>
 
-                                <div class="btn-container-trailer">
-                                    <button class="prev-btn-trailer">
+                                <div class="btn-container-driver">
+                                    <button class="prev-btn-trailer" id="prvbtn">
                                         <i class="fas fa-chevron-circle-left"></i>
                                     </button>
-                                    <button class="next-btn-trailer">
+                                    <button class="next-btn-trailer" id="nxtbtn">
                                         <i class="fas fa-chevron-circle-right"></i>
                                     </button>
                                 </div>
@@ -118,7 +128,15 @@
 
                             <div class="drivers-content" id="routes">
                                 <h4 id="tab-title">ROUTES</h4>
-                                <!-- <img id="route-img" src=""> -->
+                                <div class="route-container"> 
+                                    <img class="zoom" id="route-img" src="img/Blank_US_Map.svg">
+                                </div>
+
+                                <div class="legend">
+                                    <div><i class="fas fa-truck-loading legend-icons-travels"></i><h5>Driver Travels</h5></div>
+                                    <div><i class="fas fa-comment-slash legend-no-travel"></i><h5>Does Not Travel</h5></div>
+                                    <div><a href="mailto:glovictransport220@gmail.com"><i class="fas fa-mobile-alt legend-dispatch"></i><h5>Contact Dispatch</h5></a></div>
+                                </div>
                             </div>
         
                         </div>
@@ -130,14 +148,61 @@
                 <div class="title">
                      <h2>TRAILERS</h2>
                 </div>
+
+                <div class="trailer-info-content"> 
+                    <button class="prev-btn-trailer" id="prvbtn">
+                        <i class="fas fa-chevron-circle-left"></i>
+                    </button>
+
+                    <div class="rent-trailer-img-grid">
+                        <div class="row">
+                            <div class="column">
+                                <img class="zoom rent-trailer-img" src="img\T1.jpeg">
+                                <img class="zoom rent-trailer-img" src="img\T2.jpeg">
+                                <img class="zoom rent-trailer-img" src="img\T3.jpeg">                                
+                            </div>
+                            
+                            <div class="column">
+                                <img class="zoom rent-trailer-img" src="img\T4.jpeg">
+                                <img class="zoom rent-trailer-img" src="img\T5.jpeg">
+                                <img class="zoom rent-trailer-img" src="img\T6.jpeg">                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="next-btn-trailer" id="nxtbtn">
+                        <i class="fas fa-chevron-circle-right"></i>
+                    </button>
+
+                    <div class="table-content-trailer">
+                        <div class="table-content-name">
+                            <h1 class="trailer-number">Trailer #1</h1>
+                        </div>
+                        <div class="make"><span>UTILITY</span></div>
+                        <ul class="features">
+                            <li><span class="bold">Model: </span>DRY</li>
+                            <li><span class="bold">Year: </span>2022</li>
+                            <li><span class="bold">Availability: </span>02/10/2022</li>
+                        </ul>
+
+                        <button class="sales">CONTACT SALES</button>
+                    </div>
+
+                </div>
             </section>
     <!-- CONTACT -->
             <section id="contact" class="section">
                 <div class="title">
                      <h2>CONTACT US</h2>
+                     <div class="contact-container">
+                         <a class="socialmedia" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                         <a class="socialmedia" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                         <a class="socialmedia" href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter-square"></i></a>
+                         <a class="socialmedia" href="mailto:an_email@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+                     </div>
+                     <p id="copyright">© Glovic Transport LLC</p>
                 </div>
-            </section>
-        
+            </section>        
         <script src="medium-zoom.min.js"></script>
         <script src="index.js"></script>
     </body>
